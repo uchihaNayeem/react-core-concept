@@ -3,28 +3,14 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
-  let person = {
-    name: 'mahfuz',
-    job: 'ATN Singer',
-    ocupassion: 'Bussiness'
-    
-  }
-  let personTwo = {
-    name: 'Eva Rahman',
-    job: 'Singer',
-    ocupassion: 'singer'
-    
-  }
-
-  let cssStyle={
-    color: 'red',
-    backgroundColor: 'white'
-
-  }
-
-  
+// personer Attribute hishebe use hoise
   const nayoks = ['Rubel', 'manna', 'deluwar']
-  
+
+// 32.8 product akta arrray r vitore object
+  const product =[
+    {name: 'Photoshop', price:'$230'},
+    {name: 'Illustrator', price:'$120'}
+  ]
 
 
 
@@ -32,44 +18,71 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-{/* 
-        <p>I've started to learn REACT on 21st August, 2020...</p>
-        <p>react emmet installed</p>
-        <h1>Math: {(12+12)}</h1>
-        <h1 style={cssStyle} >Name: {person.name}</h1>
-        <h1>Job & ocupassion: {person.job + ' ' + person.ocupassion}</h1>
 
-        <h3 style={{backgroundColor: 'blue'}}>Name: {personTwo.name}</h3>
-        <h3 style={{backgroundColor: 'blue'}}>Name: {personTwo.name}</h3>
-         */}
-        
-        <Person name={nayoks[0]} femaleName='Mousumi'></Person>
-        <Person name='Razzak' femaleName='Sabnoor'></Person>
-        <Person name='Manna' femaleName='Sucanda'></Person>
-        
-        
+
+        {/* Product Component Call korlam */}
+        <Product pName={product[0].name} price={product[0].price}></Product>
+        <Product pName={product[1].name} price={product[1].price}></Product>
+
+        {/* Person Component Call korlam */}
+        <Person name={nayoks[0]} job='Actor'></Person>
+
+
+
       </header>
     </div>
   );
 }
 
+
+// Product Component
+
+function Product(props){
+  let productStyle ={
+    border: '2px solid gray',
+    borderRadius: '5px',
+    height: '200px',
+    width: '200px',
+    backgroundColor: 'lightgray',
+    
+  }
+
+  return(
+    <div style={productStyle}>
+      <h2>{props.pName}</h2>
+  <h3>{props.price}</h3>
+
+    </div>
+
+  )
+}
+
+
+
+
+
+
+
+
+
+
+
+
+// Person Component
+
 function Person(props){
 
-  console.log(props);
-
-  let borderYellow = {
-    border: '2px solid yellow',
+  let newBorder = {
+    border: '2px solid red',
     margin: '10px'
   }
 
+  return(
+    <div style={newBorder}>
+      <h1>Name: {props.name} </h1>
+      <p style={{border: '2px solid yellow', borderRadius: '10px', margin: '10px'}}>Job: {props.job} </p>
+    </div>
 
-
-  return (
-  <div style={{border: '2px solid red', margin: '10px'}}>
-  <h1 style={borderYellow} >Name: {props.name}</h1>
-
-  <h3>Nakiya: {props.femaleName}</h3>
-  </div>
   )
 }
 
