@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
@@ -43,7 +43,10 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
 
 
+
+        <Users></Users>
         {/* 32.9 */}
+        
         <ul>
           {
             hokage.map(n => <li>{n}</li>)
@@ -85,6 +88,28 @@ function App() {
   );
 }
 
+// 32.12
+function Users(){
+  const [users, setUsers] = useState([]);
+  useEffect(()=>{
+    fetch('https://jsonplaceholder.typicode.com/users')
+    .then(res => res.json())
+    .then(jsonData => setUsers(jsonData));
+  })
+
+  return(
+    <div>
+      <h3>Dynamic Users: {users.length}</h3>
+      {
+        console.log(users)
+      }
+      {
+        users.map(user => <li>{user.email}</li>)
+      }
+      
+    </div>
+  )
+}
 
 // Product Component
 
