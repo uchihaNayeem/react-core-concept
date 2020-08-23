@@ -79,6 +79,7 @@ function App() {
         {/* Person Component Call korlam */}
         <Person name={nayoks[0]} job='Actor'></Person>
 
+        <NewCounter></NewCounter>
 
 
 
@@ -87,6 +88,24 @@ function App() {
     </div>
   );
 }
+
+// 33.7
+
+function NewCounter(){
+
+  const [first, second] = useState(9)
+
+  console.log(first, second);
+
+
+  return(
+    <div>
+      <h1>Increase: {first} </h1>
+    </div>
+  )
+}
+
+
 
 // 32.12
 function Users(){
