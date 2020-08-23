@@ -33,7 +33,7 @@ function App() {
     {name: 'Illustrator', price: '$15'},
   ]
 
-  let hokage = ['kajeKage', 'RaiKage', 'HoshiKage', 'MijuKage']
+  let hokage = ['kajeKage', 'RaiKage', 'HoshiKage', 'MijuKage', 'Kaje kangge', 'godaine Hokage']
  
 
 
